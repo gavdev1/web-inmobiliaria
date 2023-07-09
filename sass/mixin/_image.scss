@@ -1,0 +1,11 @@
+@use "breakpoints" as *;
+
+@mixin image($width: 300px, $width-media: 100%, $radius:null) {
+  margin: 0 auto;
+  width: $width;
+  border-radius: $radius;
+  
+  @include breakpoints("sm"){
+    max-width: $width-media;
+  }
+}

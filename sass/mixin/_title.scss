@@ -1,0 +1,9 @@
+@use "../utilities/functions" as *;
+@use "../utilities/variables" as *;
+@use "resize" as *;
+
+@mixin title($color: null, $size: 2.6em, $margin-block: null) {
+  color: getColor($color);
+  margin-block: $margin-block;
+  @include resize($size);
+}

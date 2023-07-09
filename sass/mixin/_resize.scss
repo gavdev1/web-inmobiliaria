@@ -1,0 +1,9 @@
+@use "breakpoints" as *;
+
+@mixin resize($size) {
+  font-size: $size;
+  
+  @include breakpoints("sm") {
+    font-size: $size * 1.5;
+  }
+}

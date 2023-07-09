@@ -1,0 +1,32 @@
+@use "../mixin" as *;
+
+.footer{
+  margin-block: 3em;
+  @include grid(1fr, 2, 1em);
+  @include breakpoints("sm"){
+    @include grid(1fr, 5, 2em);
+  }
+
+  &__desc{
+    margin-top: 1em;
+    color: #777;
+  }
+
+  &__widget{
+    @include flex(flex, column, null, 1em, null, center);
+  }
+
+  &__title-social{
+    text-align: center;
+  }
+
+  &__social {
+    margin-top: 1em;
+    @include flex(flex, column, null, 1em, null, center);
+
+    &-icon {
+      font-size: 1.5em;
+      @include flex(flex, null, null, 1em);
+    }
+  }
+}

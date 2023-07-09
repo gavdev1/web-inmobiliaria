@@ -1,0 +1,61 @@
+@use "../mixin" as *;
+@use "../utilities/functions" as *;
+
+.home{
+  @include breakpoints("sm") {
+    @include grid(1fr, 2, 1.5em, null, center);
+  }
+
+  &-container{
+    background: linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 6%) 30%);
+  }
+
+  &__texts{
+    padding-top: 10em;
+  }
+
+  &__location{
+    @include flex(flex, null, null, null, null, center);
+    margin-block: 1em;
+    padding: .5em;
+    border-radius: 10px;
+    background-color: getColor("white");
+
+    &-icon{
+      font-size: 1.5em;
+      color: getColor("primary");
+    }
+
+    &-input{
+      width: 90%;
+      background-color: getColor("white");
+      border: none;
+      outline: none;
+      padding: 0.5em;
+    }
+  }
+
+  &__feactures{
+    @include flex(flex, null, null, 1em, null, center);
+    margin-bottom: 2em;
+
+    &-item{
+      flex: 1;
+    }
+
+    &-title{
+      color: getColor("white");
+      @include flex(flex, null, null, .5em, null, center);
+      @include resize(1.5em);
+    }
+
+    &-icon{
+      color: getColor("secondary");
+    }
+  }
+
+  &__image-img{
+    outline: 5px solid hsl(0, 0%, 16%);
+    border-radius: 125px 125px 0 0;
+  }
+}

@@ -1,0 +1,41 @@
+@use "variables" as *;
+
+@function getColor($color) {
+  @return map-get($palette, $color);
+}
+
+@function getBreakpoint($query) {
+  @return map-get($breakpoints, $query);
+}
+
+@function getColor($color) {
+  @return map-get($palette, $color);
+}
+
+@function mixColor($color, $type, $amount: 1, $mix: #fff) {
+  @if $type =="lighten" {
+    @return lighten($color, $amount);
+  }
+
+  @else if $type =="darken" {
+    @return darken($color, $amount);
+  }
+
+  @else if $type =="mix" {
+    @return mix($color, $mix);
+  }
+}
+
+@function toRGBA($color, $opacity) {
+  @return rgba($color, $opacity)
+}
+
+@function isBold($bold) {
+  @if $bold =="bold" {
+    @return nth($weight, 3);
+  }
+
+  @else {
+    @return nth($weight, 3);
+  }
+}

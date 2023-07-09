@@ -1,0 +1,54 @@
+@use "../mixin" as *;
+@use "../utilities/functions" as *;
+
+.contact{
+	margin-top: 2em;
+	@include breakpoints("sm") {
+    	@include grid(1fr, 2, 1.5em, null, center);
+  	}
+
+  	&__date{
+  		@include flex(flex, null, wrap, 1em, null, center);
+  	}
+
+  	&__widgets{
+	margin-top: 2em;
+	padding: 1em;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	flex: 0 0 45%;
+
+	&-item{
+		margin-block: 1em;
+	}
+
+	&-date{
+		@include flex(flex, null, null, 1em);
+	}
+
+	&-icon{
+		width: 40px;
+		height: 40px;
+		padding: 0.5em;
+		background-color: getColor("primary-light");
+		color: getColor("white");
+		border-radius: 10px;
+		@include flex(flex, null, null, null, center, center);
+	}
+
+	&-title{
+		color: getColor("primary");
+	}
+
+	&-text{
+		color: #777;
+	}
+}
+
+	&__image{
+		outline: 5px solid getColor("text-color-light");
+    	border-radius: 125px 125px 0 0;
+    	margin-top: 2em;
+  	}
+}
+
+	

@@ -1,0 +1,14 @@
+@use "../mixin" as *;
+@use "../utilities/functions" as *;
+
+.value {
+	margin-top: 5em;
+	@include breakpoints("sm") {
+    	@include grid(1fr, 2, 1.5em, null, center);
+  	}
+
+  	&__image{
+    	outline: 5px solid getColor("text-color-light");
+    	border-radius: 125px 125px 0 0;
+  	}
+}

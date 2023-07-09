@@ -1,0 +1,19 @@
+@use "../mixin" as *;
+
+.logos{
+  margin-top: 2em;
+  @include grid(1fr, 2 , 2em, center, center);
+  @include breakpoints("sm") {
+      @include grid(1fr, 4);
+  }
+  
+}
+
+.logo{
+  opacity: .6;
+  @include transiciones(1s, opacity);
+  
+  &:hover{
+    opacity: 1;
+  }
+}

@@ -1,0 +1,12 @@
+@use "../utilities/_functions.scss" as *;
+
+@mixin button($display, $padding-block, $padding-inline, $color, $bg, $weigth: null, $border: null, $radius: null) {
+  display: $display;
+  padding: $padding-block $padding-inline;
+  border: $border;
+  border-radius: $radius;
+  font-weight: $weigth;
+  color: getColor($color);
+  background-color: getColor($bg);
+
+}

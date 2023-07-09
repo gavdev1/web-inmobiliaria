@@ -1,0 +1,7 @@
+@mixin grid($size: 1fr, $col: 1, $gap: null, $justify: null, $align: null) {
+  display: grid;
+  grid-template-columns: repeat($col, $size);
+  gap: $gap;
+  justify-content: $justify;
+  align-items: $align;
+}

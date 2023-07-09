@@ -1,0 +1,85 @@
+@use "../mixin" as *;
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+
+.header {
+  width: 100%;
+  padding-block: 1em;
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: getColor("container-color");
+  @include position(fixed, 0, null, null, 0);
+  @include transiciones(1s, background-color);
+  
+  
+}
+
+.nav {
+  width: 90%;
+  @include flex(flex, null, null, null, center, center);
+  @include breakpoints("sm") {
+    @include flex(flex, null, null, null, space-around, center);
+  }
+
+  &__logo {
+    @include flex(flex, null, null, 1em, null, center);
+    color: getColor("primary");
+
+    &-image {
+      width: 30px;
+    }
+  }
+
+  &__menu {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: getColor("white");
+    border-radius: 30px;
+    padding: 1em;
+    width: 90%;
+    margin: 0 auto;
+    @include position(fixed, null, 0, 1em, 0);
+    @include flex(flex, null, null, 2em, center, null);
+
+    @include breakpoints("sm") {
+      position: static;
+      background-color: transparent;
+      border-radius: none;
+      padding: 0;
+      gap: 2em;
+      margin: 0;
+      width: unset; 
+      box-shadow: unset;
+    }
+
+
+    &-element {
+      @include flex(flex, column, null, null, center, center);
+      color: getColor("text-color-light");
+      display: none;
+
+      @include breakpoints("sm") {
+        @include flex(flex, row);
+      }
+    }
+
+    &-icon {
+      font-size: 1.5em;
+      padding: .5em;
+      border-radius: 50%;
+      color: getColor("white");
+      background-color: getColor("primary");
+      @include breakpoints("sm") {
+        display: none;
+      }
+    }
+
+    &--button {
+      display: none;
+    }
+  }
+}
+
+.bg-visible{
+  background-color: getColor("primary-light");
+  border: none;
+}

@@ -1,0 +1,110 @@
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../mixin" as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  color: getColor("text-color-light");
+  font-size: 1em;
+}
+
+h1, h2, h3 {
+  color: getColor("title-color");
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: getColor("dark");
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*=============== REUSABLE CSS CLASSES ===============*/
+.center{
+  text-align: center;
+}
+
+.btn-primary {
+  @include button(inline-block, 1em, 1.5em, "white", "primary", null, null, 10px);
+  box-shadow: getColor("primary") 0px 3px 8px;
+}
+
+.btn-light {
+  @include button(inline-block, .6em, 2.5em, "white", "primary-light", 600, null);
+  margin-top: 1em;
+  box-shadow: getColor("primary") 0px 3px 8px;
+}
+
+.container {
+  @include container(1100px, 0, 1em);
+}
+
+.title {
+  @include title("white", 2.5em, .4em);
+}
+
+.title--small{
+  @include title("primary-alt", 2em, .4em);
+  text-transform: uppercase;
+}
+
+.subtitle{
+  @include title("secondary", 1em);
+  text-transform: uppercase;
+}
+
+.image {
+  @include image();
+}
+
+.card {
+  padding: .5em;
+
+  &-container {
+    margin-block: 1em;
+    @include grid(320px, 1, 1.5em, center);
+    @include transiciones(.5s, box-shadow);
+    @include breakpoints("sm") {
+      @include grid(1fr, 3, null, center);
+    }
+  }
+
+  &__image{
+    border-radius: 20px
+  }
+
+  &__price{
+    margin-top: 1em;
+    color: #777;
+
+    &--orange{
+      color: getColor("secondary");
+    }
+  }
+
+  &__text{
+    color: #777;
+  }
+
+  &:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+}

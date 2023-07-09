@@ -1,0 +1,17 @@
+@use "../utilities/functions" as *;
+
+@mixin breakpoints($breakpoint, $size: null) {
+  $size: getBreakpoint($breakpoint);
+
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin breakpoints-max($breakpoint, $size: null) {
+  $size: getBreakpoint($breakpoint);
+
+  @media (max-width: $size) {
+    @content;
+  }
+}

@@ -1,0 +1,10 @@
+@use "../utilities/functions" as *;
+
+.subscribe{
+	margin-top: 4em;
+	background-color: getColor("primary");
+	text-align: center;
+	outline: 5px solid getColor("primary-light");
+	border-radius: 20px;
+	padding-block: 2em;
+}
